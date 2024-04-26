@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Welcome to Messenger App!
 
-## Getting Started
+Hi! This repo is basically a **attempt** of clone messenger-app while keeping things simple
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Requirements
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This app should able to do the following things : -
+1. Send and receive text/photos/videos messages
+2.  Create user groups
+3.  Call - Audio and video call
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Optional : - 
+1. *Local Caching* to recent text and attachment
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## **Messenger App functionality**
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1.  User accounts: Users would need to be able to create accounts and log in to the application. 
+2.  _Contacts: Users would need to be able to add and manage their contacts, including the ability to search for other users and send friend requests._
+3.  _Chat: The main feature of a messenger app is the chat feature, where users can send and receive messages in real-time. The chat feature would need to be designed to handle large numbers of messages and support features like read receipts and typing indicators._
+4.  _Media sharing: Users would need to be able to send and receive photos, videos, and other types of media within the chat._
+5.  _Groups: Users would need to be able to create and manage group chats, including the ability to add and remove members._
+6.  _Notifications: Users would need to be notified of new messages and other interactions on the platform._
+7.  _End-to-end encryption: To ensure the security and privacy of user data, the messaging feature would need to be designed with end-to-end encryption._
+8. 
+Optional : -
+1.  _Scalability: The messenger app needs to be able to handle a large number of users and high traffic loads. This would involve designing the application to be scalable, including using technologies such as load balancers and distributed systems._
+2.  _Mobile and web: The messenger app should be designed for web and mobile platforms so that it can be used on any device._
+3.  _Analytics: The messenger app would need to be designed to track usage and engagement metrics, including user engagement, message engagement, and other key performance indicators._
