@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import StoreProvider from "@/states/store-provider";
+import { ThemeProvider } from "next-themes";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <StoreProvider>
-      <html lang="en">
-        <body className={inter.className}>{children}</body>
+      <html lang="en" className="dark">
+        <body className={inter.className}>
+          <ThemeProvider enableSystem={true} attribute="class">
+            {children}
+          </ThemeProvider>
+        </body>
       </html>
     </StoreProvider>
   );
