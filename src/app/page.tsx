@@ -1,13 +1,13 @@
 "use client"
 import { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "@/states/hooks";
-import { decrement, increment } from "@/states/slices/counter/counterSlice";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { Auth } from '@supabase/auth-ui-react'
+import { ThemeSupa } from '@supabase/auth-ui-shared'
+import { createClient } from "@/utils/supabase/client";
+import { Session } from "@supabase/supabase-js";
 
 export default function Home() {
-  const count = useAppSelector((state) => state.counter.value);
-  const dispatch = useAppDispatch();
   const { systemTheme, theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -15,10 +15,36 @@ export default function Home() {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
 
   const currentTheme = theme === "system" ? systemTheme : theme;
 
+  const [session, setSession] = useState<Session | null>(null)
+  const supabase = createClient()
+    useEffect(() => {
+      supabase.auth.getSession().then(({ data: { session } }) => {
+        setSession(session)
+      })
+
+      const {
+        data: { subscription },
+      } = supabase.auth.onAuthStateChange((_event, session) => {
+        setSession(session)
+      })
+
+      return () => subscription.unsubscribe()
+    }, [])
+    const handleSignOut = async()=>{
+      await supabase.auth.signOut();
+    }
+    
+    console.log(session)
+    if (!mounted) return null;
+
+    if (!session) {
+      return <>Not logged in!</>
+    }
+    else {
+    
   return (
     <div className="flex">
       <div>
@@ -48,9 +74,8 @@ export default function Home() {
           )}
         </div>
       </div>
-      <p className="dark:text-white text-black">Current count : {count}</p>
-      <button onClick={() => dispatch(increment())}>Increment</button>
-      <button onClick={() => dispatch(decrement())}>Decrement</button>
+      <button onClick={handleSignOut}>Signout</button>
     </div>
   );
+}
 }

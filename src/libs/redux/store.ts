@@ -8,10 +8,10 @@ import {
   REHYDRATE,
 } from "redux-persist";
 import persistStore from "redux-persist/lib/persistStore";
-import { counterReducer } from "./slices/counter/counterSlice";
+import { authReducer } from "./slices/auth-slice";
 
 const rootReducer = combineReducers({
-  counter : counterReducer
+  auth : authReducer
 });
 
 export const store = configureStore({

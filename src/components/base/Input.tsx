@@ -1,6 +1,7 @@
 import React, { forwardRef } from "react";
 import { FieldValues, UseFormRegister } from "react-hook-form";
 import { InputHTMLAttributes } from "react";
+import { cn } from "@/utils/tailwind/merge";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
@@ -11,7 +12,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 const Input = forwardRef<HTMLInputElement, InputProps>(({ name, register, className, ...rest }, ref) => {
   return (
     <>
-      <input {...register(name)} className={`w-48 h-11 rounded-md ${className}`} ref={ref} {...rest} />
+      <input {...register(name)} className={cn(`w-48 h-11 rounded-md`, className)} ref={ref} {...rest} />
     </>
   );
 });
