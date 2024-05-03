@@ -9,6 +9,20 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        black: "#000000",
+        "charcoal": "#333333",
+        "graphite": "#424242",
+        "ebony": "#555555",
+        "jet-black": "#666666",
+        "cinder": "#777777",
+        "slate": "#888888",
+        "iron": "#999999",
+        "smoke": "#AAAAAA",
+        "whisper-white": "#DDDDDD",
+        "white" : "#fff",
+        "msgblue" : "#006aff"
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

@@ -33,11 +33,12 @@ export default function Home() {
 
       return () => subscription.unsubscribe()
     }, [])
+
+
     const handleSignOut = async()=>{
       await supabase.auth.signOut();
     }
     
-    console.log(session)
     if (!mounted) return null;
 
     if (!session) {
